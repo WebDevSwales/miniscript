@@ -39,7 +39,7 @@ findNeighbours = function(x=22,y=22,destinX=38,destinY=10,cle=true,path=pathArra
 	
 	checked.push([x,y])
 	path.push([x,y])
-	print path
+	
 	input""
 	
 	text.setCellColor x,y,color.blue
@@ -89,7 +89,7 @@ findNeighbours = function(x=22,y=22,destinX=38,destinY=10,cle=true,path=pathArra
 		end if
 	end if
 	
-	input ""
+	
 	for i in checked
 		for j in tempArray
 			if str(j[0]) == str(i[0]) and str(j[1]) == str(i[1]) then
@@ -100,6 +100,7 @@ findNeighbours = function(x=22,y=22,destinX=38,destinY=10,cle=true,path=pathArra
 	
 	if tempArray.len > 0 then
 		for i in tempArray
+			print i
 			toCheck.push(i)	
 		end for
 	end if
