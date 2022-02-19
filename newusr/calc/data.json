@@ -1,0 +1,102 @@
+{
+	"0": {
+		"name": "Pints of Beer",
+		"weight": 473
+	},
+	"1": {
+		"name": "Apache Helicopters",
+		"weight": 5165000
+	},
+	"2": {
+		"name": "Ford Escort Mk 1's",
+		"weight": 785000
+	},
+	"3": {
+		"name": "Dwayne 'The Rock' Johnsons",
+		"weight": 118000
+	},
+	"4": {
+		"name": "Couches",
+		"weight": 13607
+	},
+	"5": {
+		"name": "Nokia 3310s",
+		"weight": 88
+	},
+	"6": {
+		"name": "Tom Cruises",
+		"weight": 68000
+	},
+	"7": {
+		"name": "Eiffel Towers",
+		"weight": 10100000000
+	},
+	"8": {
+		"name": "Geese",
+		"weight": 4000
+	},
+	"9": {
+		"name": "Pencils",
+		"weight": 6
+	},
+	"10": {
+		"name": "Cheese Wheel",
+		"weight": 4000
+	},
+	"11": {
+		"name": "Desktop Computers",
+		"weight": 11000
+	},
+	"12": {
+		"name": "Glass Soda Bottles",
+		"weight": 530
+	},
+	"13": {
+		"name": "Xbox 360s",
+		"weight": 3500
+	},
+	"14": {
+		"name": "Ostrich Eggs",
+		"weight": 1522
+	},
+	"15": {
+		"name": "lurchers",
+		"weight": 20000
+	},
+	"16": {
+		"name": "coke cans",
+		"weight": 384
+	},
+	"17": {
+		"name": "beetles",
+		"weight": 60
+	},
+	"18": {
+		"name": "washing machines",
+		"weight": 77110
+	},
+	"19": {
+		"name": "lurchers (dog)",
+		"weight": 200000
+	},
+	"20": {
+		"name": "Fully Grown Oak Trees",
+		"weight": 14385000
+	},
+	"21": {
+		"name": "Full Coke Cans",
+		"weight": 399
+	},
+	"22": {
+		"name": "1 Year Old Baby Rhinos",
+		"weight": 11339
+	},
+	"23": {
+		"name": "Hobbits of Oats",
+		"weight": 76000
+	},
+	"24": {
+		"name": "Crowns",
+		"weight": 1060
+	}
+}

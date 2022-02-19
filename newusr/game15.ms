@@ -1,11 +1,11 @@
+
 gameState = []
 success = []
 puzzle = []
 emptyCell = " "
-moves = 5
-highScore = 5
 data = []
 loaded = file.readLines ("data.txt")
+highScore =1000000
 
 setup = function()
 	for i in range(1,rows*rows)
@@ -28,15 +28,16 @@ setup = function()
 		startSwap = ceil(rnd*4)-1
 		move(startSwap)
 	end for
+	moves = 0
 	showBoard
-	game
+	game()
 end function	
 
-game = function(moves)
-	moves = moves
+game = function(moves = 0)
+	moves = moves + 1
 	print " "
 	print "current moves:" + moves
-	print "highScore:" + highScore
+	print "highScore("+rows+"):" + highScore[rows-1]
 	print "[q]uit"
 	
 	k = key.get
@@ -71,10 +72,10 @@ game = function(moves)
 			gfx.drawImage img, 0, 0, gfx.width, gfx.height, 0, 0, img.width, img.height
 			wait 0.1
 		end for
+		save
 		exit
 	end if
 	showBoard
-	
 	game(moves)
 end function
 
@@ -88,9 +89,12 @@ showBoard = function()
 end function
 
 swap = function(one,two)
+	
 	temp = puzzle[one]
 	puzzle[one] = puzzle[two]
 	puzzle[two] = temp	
+	
+	
 end function
 
 move = function(direction)
@@ -108,14 +112,17 @@ move = function(direction)
 	else if direction == 2 and xPos % rows != rows-1 then
 		swap(xPos,xPos+1)
 	end if
-	print xPos
 	
 end function
 
 save = function()
 	clear
+	if outer.moves < loaded[0][rows] then 
+		highScore[rows] = outer.moves
+	end if
 	pushPuzzle = puzzle.join(",")	
-	pushSuccess = success.join(",")			
+	pushSuccess = success.join(",")
+	highScoreSuccess = highScore.join(",")
 	data.push(highScore)
 	data.push(moves)
 	data.push(pushPuzzle)
@@ -132,18 +139,19 @@ newGame = input("[L]oad or [N]ew game?")
 
 if newGame == "L" then
 	
-	highscore = loaded[0].val
+	highScore = loaded[0].split(",")
 	moves = loaded[1].val
 	puzzle = loaded[2].split(",")
 	rows = loaded[3].val
 	success = loaded[4].split(",")
 	clear
 	showBoard
-	game(moves)
+	game()
 	
 else if newGame == "N" then
 	print "starting new game"
 	rows = input("how many rows do you want? ").val
+	HighScore = loaded[0].split(",")
 	setup
 	if rows > 17 then
 		input "this is to large a puzzle for anyone, start again"
