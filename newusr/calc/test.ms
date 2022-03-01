@@ -1,6 +1,6 @@
 import "json"
 
-//objects = json.parse(file.open("data.json").read)
+objects = json.parse(file.open("data.json").read)
 //objects = json.parse(http.get("https://pastebin.com/raw/6KmQqMan"))
 
 //postData = {}
@@ -11,13 +11,13 @@ import "json"
 //userKey = http.post("https://pastebin.com/api/api_login.php", postData)
 //print userKey
 
-postData = {}
-postData.api_dev_key = "7K2qouwvq7NNQkz5l8P1aktjZ8OdE9Vk"
-postData.api_userkey = "78105757daf83ba45aef46c01ff10a0f"
-postData.api_option = "list"
+//postData = {}
+///postData.api_dev_key = "7K2qouwvq7NNQkz5l8P1aktjZ8OdE9Vk"
+//postData.api_userkey = "78105757daf83ba45aef46c01ff10a0f"
+//postData.api_option = "list"
 
-result = http.post("https://pastebin.com/api/api_post.php", postData)
-print result
+//result = http.post("https://pastebin.com/api/api_post.php", postData)
+//print result
 input""
 
 welcome = function
