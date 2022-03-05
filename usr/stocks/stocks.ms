@@ -29,6 +29,7 @@ heartCo.prices = Stock.prices[:]
 heartCo.code = "HCO"
 heartCo.color = color.red
 
+
 orangeInc = new Stock
 orangeInc.name = "Orange Inc."
 orangeInc.usr = 2
@@ -57,6 +58,7 @@ crypto.prices = Stock.prices[:]
 crypto.code = "CTC"
 crypto.color = color.maroon
 
+all = [heartCo,orangeInc,opOil,mini,crypto]
 
 
 

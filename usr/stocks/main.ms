@@ -1,13 +1,13 @@
 main = {}
 main.set = function(state)
-	self.name = stocks[state].name
-	self.code = stocks[state].code
+	self.name = stocks.all[state].name
+	self.code = stocks.all[state].code
 	self.left = 50
 	self.bottom = 200
 	self.length = 500
 	self.height = 500
-	self.prices = stocks[state].prices
-	self.color = stocks[state].color
+	self.prices = stocks.all[state].prices
+	self.color = stocks.all[state].color
 	self.update = function
 		for i in range(0,self.prices.len - 2)
 			dis.line ((i*xSpace)*4)+self.left,self.prices[i]*4,(((i+1)*xSpace)*4)+self.left,self.prices[i+1]*4,self.color,4

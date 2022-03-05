@@ -1,5 +1,6 @@
 import "console"
 import "stocks"
 import "stockBars"
+import "main"
 
-pprint stocks(1)
+stocks.heartCo.draw
