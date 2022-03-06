@@ -118,43 +118,19 @@ end function
 //tidy up and optimise
 generate = function
 	user.password = ""
-	containsSpec = 0
-	
-	for i in user.wordCode
-		if i%3 == 0 then
-			user.password = user.password + character.unique[i]
-		else if i%3 == 1 then
-			user.password = user.password + character.unique[i+5]
-		else if i%3 == 2 then
-			user.password = user.password + character.unique[-i-4]
-		end if
-	end for
-	
-	for i in character.spec
-		for j in user.password
-			if i == j then
-				containsSpec = containsSpec + 1
-			end if
-		end for
-	end for
-	
-	while containsSpec < 5 
-		containsSpec = containsSpec+1
-		if containsSpec%2 == 0 then
-			user.password = user.password + character.num[(-containsSpec*user.wordCode.len)%character.num.len-1]
-			user.password = character.num[(-containsSpec*user.wordCode.len)%character.num.len-1]
+	while not key.pressed("escape")
+		clear
+		user.wordCode = []
+		print user.word
+		user.getCodeWord
+		print user.wordCode
+		k = key.get
+		if k.code == 8 then
+			user.word = slice(user.word,0,-1)
 		else
-			user.password = user.password + character.spec[(-containsSpec*user.wordCode.len)%character.spec.len-1]
-		end if	
-	end while
-	
-	while user.password.len < 16
-		user.password = user.password + character.unique[safetyNet%character.unique.len-1]
-		safetyNet = safetyNet + user.wordCode.len
-	end while	
-	
-	while user.password.len > 16
-		user.password = slice(user.password,1,user.password.len-1)
+			user.word = user.word + k
+		end if
+		wait 0.1
 	end while
 end function
 
@@ -201,20 +177,12 @@ end function
 //check if this function needs to do username and word
 user.getCodeWord = function
 	if self.word.len < 1 then
-		clear
-		print "error:there is no word"
-		exit
+		return
 	end if
 	
 	for i in self.word
 		if character.full.indexOf(i) >= 0 then
 			self.wordCode.push character.full.indexOf(i)
-		end if
-	end for
-	
-	for i in self.username
-		if character.full.indexOf(i) >= 0 then
-			self.usernameCode.push character.full.indexOf(i)
 		end if
 	end for
 end function
@@ -247,8 +215,6 @@ dis.home = function
 	op = key.get
 	if op.lower == "p" then
 		user.init
-		user.getWord
-		user.getCodeWord
 		user.getCodePass
 		generate
 		dis.generate
